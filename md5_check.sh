@@ -2,8 +2,8 @@ tmp_file_Directory=$2
 echo Info:making tmp file on $tmp_file_Directory
 [ -e $tmp_file_Directory/fd5 ] || mkfifo $tmp_file_Directory/fd5
 echo Info:making tmp file successfully!
-exec 5<>~/data/fd5
-rm -rf ~/data/fd5
+exec 5<>$tmp_file_Directory/fd5
+rm -rf $tmp_file_Directory/fd5
 for ((i=1;i<=10;i++))
 do
 	echo >&5
