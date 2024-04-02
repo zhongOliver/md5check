@@ -1,5 +1,6 @@
-echo Info:making tmp file on ~/data/
-[ -e ~/data/fd5 ] || mkfifo ~/data/fd5
+tmp_file_Directory=$2
+echo Info:making tmp file on $tmp_file_Directory
+[ -e $tmp_file_Directory/fd5 ] || mkfifo $tmp_file_Directory/fd5
 echo Info:making tmp file successfully!
 exec 5<>~/data/fd5
 rm -rf ~/data/fd5
